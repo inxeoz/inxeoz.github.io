@@ -3,39 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Redirect</title>
+    <title>Code Highlighting Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tomorrow-night-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .button {
-            padding: 15px 30px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
+        /* Add some basic styling to the code block */
+        pre {
+           
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .button:hover {
-            background-color: #0056b3;
+        
+        code {
+            font-family: monospace;
+            font-size: 14px;
+           
         }
     </style>
 </head>
 <body>
-    <button class="button" onclick="redirectToLink()">Click Me to Go to Example</button>
+    <h1>Original Que:
 
-    <script>
-        function redirectToLink() {
-            window.location.href = "https://www.example.com";
-        }
-    </script>
+This problem is about candy. Initially, you only have 1 candy, and you want to have exactly n candies. you can use the following two spells in any order at most 40 times in total. Assume you have x candies now. If you use the first spell, then x candies become 2x-1 candies.
+
+If you use the second spell, then x candies become 2x+1 candies. Construct a sequence of spells, such that after using them in order, you will have exactly n candies, or determine it's impossible.
+
+Modified Que:
+
+first spell : x candy become 2*x-1 candy
+
+And second spell: x candy become 2*x+1 candy
+
+we can use spells as many times we want.</h1>
+    
+   <pre>
+        <code>
+            // This is an example of highlighted code
+            import java.util.Scanner;
+
+            class mywork {
+                public static void main(String args[]) {
+                    Scanner sc = new Scanner(System.in);
+                    System.out.println("Enter desired number of candy ");
+                    while (sc.hasNext()) {
+                        int n = sc.nextInt();
+                        if (n == 1) {
+                            System.out.println("spell1: 2*1-1 = 1");
+                            System.out.println("Enter desired number of candy ");
+                            continue;
+                        }
+                        if (n % 2 == 0) {
+                            System.out.println("Even number of candy that not possible using these two spells ");
+                            System.out.println("Enter desired number of candy ");
+                            continue;
+                        }
+                        while (n > 1) {
+                            int odd = (int) Math.ceil(n / (float) 2);
+                            if (odd % 2 == 0) {
+                                odd = (int) (n / (float) 2);
+                            }
+                            if (odd * 2 + 1 == n) {
+                                System.out.println("spell2: 2*" + odd + " + 1 = " + n);
+                            } else {
+                                System.out.println("spell1: 2*" + odd + " -1 = " + n);
+                            }
+                            n = odd;
+                        }
+                        System.out.println("Use these spells in reverse order ");
+                        System.out.println("Enter desired number of candy ");
+                    }
+                }
+            }
+        </code>
+    </pre>
 </body>
 </html>
