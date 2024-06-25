@@ -1,41 +1,328 @@
-<!DOCTYPE html>
+<!-- <!-- <!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Redirect</title>
+    <title>Three.js Sphere and Particles Example</title>
     <style>
+        /* Basic reset and styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #272727;
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            position: relative;
         }
-        .button {
-            padding: 15px 30px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
         }
-        .button:hover {
-            background-color: #0056b3;
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            width: 100%;
+            height: 100%;
+            transition: background-color 0.3s, backdrop-filter 0.3s;
+        }
+
+        .container:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            z-index: 2;
+            /* Ensure footer is above the background */
+        }
+
+        .leftdiv,
+        .rightdiv,
+        .middiv {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
-<body>
-    <button class="button" onclick="redirectToLink()">Click Me to Go to Example</button>
 
-    <script>
-        function redirectToLink() {
-            window.location.href = "side.html";
-        }
-    </script>
+<body>
+    <div class="content">
+
+        <div class="leftdiv">
+            <div class="container">
+                <p>"Continue to breathe; the tide will carry you to new shores. Stay resilient; do not surrender." (0_1)
+                </p>
+            </div>
+            <div class="container">
+                <p>"Continue to breathe; the tide will carry you to new shores. Stay resilient; do not surrender." (0_1)
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="middiv">
+            <div class="container">
+                <h1>New Friend</h1>
+                <p>AI models help humans by enhancing our abilities and expanding what we can achieve. They transform
+                    how we
+                    work, learn, and solve problems.</p>
+            </div>
+
+            <div class="container">
+                <h1>Rust vs Java vs Haskell</h1>
+                <p>Comparing performance, safety, and functional programming strengths.</p>
+            </div>
+
+        </div>
+        <div class="rightdiv">
+            <div class="container">
+                <h1>Game Plan</h1>
+                <p>I have to create a gene 🧬 game 🤔</p>
+            </div>
+
+            <div class="container">
+                <p>Don't complicate the scenario, make it as simple as possible.</p>
+            </div>
+
+            <div class="footer">
+                <p>Created with Three.js | &copy; 2024 inxeoz</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./sphere.js"></script>
+    <script src="./particle.js"> </script>
 </body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Sphere and Particles Example</title>
+    <style>
+        /* Basic reset and styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #272727;
+            /* Dark background */
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            text-align: left;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Semi-transparent white background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glassmorphism */
+            border-radius: 12px;
+            /* Rounded corners */
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            font-family: cursive;
+            font-size: medium;
+            /* Soft shadow */
+        }
+
+        .container:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Lighter semi-transparent white on hover */
+            backdrop-filter: blur(25px);
+            font-size: large;
+
+        }
+
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .rightdiv {
+            overflow-y: scroll;
+
+            height: 100%;
+            width: 30%;
+            z-index: 1;
+            background-color: rgba(34, 139, 174, 0.1);
+            /* Semi-transparent white background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glassmorphism */
+            border-radius: 12px;
+            /* Rounded corners */
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .middiv {
+            overflow-y: scroll;
+            height: 100%;
+            z-index: 1;
+            background-color: rgba(34, 139, 174, 0.1);
+            /* Semi-transparent white background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glassmorphism */
+            border-radius: 12px;
+            /* Rounded corners */
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .middiv::-webkit-scrollbar,
+        .rightdiv::-webkit-scrollbar {
+            width: 3px;
+            /* width of the scrollbar */
+            height: 3px;
+            /* height of the scrollbar */
+        }
+
+        /* Thumb */
+        .middiv::-webkit-scrollbar-thumb,
+        .rightdiv::-webkit-scrollbar-thumb {
+            background-color: #fafafa;
+            /* color of the scroll thumb */
+            border-radius: 5px;
+            /* roundness of the scroll thumb */
+            height: 20px;
+            /* height of the thumb */
+        }
+
+        /* Track */
+        .middiv::-webkit-scrollbar-track,
+        .rightdiv::-webkit-scrollbar-track {
+            background-color: transparent;
+            /* color of the track */
+        }
+
+        .blurred {
+            filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="middiv">
+        <div class="container">
+            <h1>New Friend</h1>
+            <p>AI models help humans by enhancing our abilities and expanding what we can achieve. They transform
+                how we
+                work, learn, and solve problems.</p>
+        </div>
+        <div class="container">
+            <h1>Rust vs Java vs Haskell</h1>
+            <p>Comparing performance, safety, and functional programming strengths.</p>
+        </div>
+        <div class="container">
+            <a href="./side.html" style="color: white;">
+                <h1>HackThon code example</h1>
+            </a>
+
+        </div>
+    </div>
+    <div class="rightdiv">
+        <div class="container">
+            <p>"Continue to breathe; the tide will carry you to new shores. Stay resilient; do not surrender." (0_1)
+            </p>
+        </div>
+        <div class="container">
+            <h1>Game Plan</h1>
+            <p>I have to create a gene 🧬 game 🤔</p>
+        </div>
+        <div class="container">
+            <p>Don't complicate the scenario, make it as simple as possible.</p>
+        </div>
+        <div class="container">
+            <h1 id="mouse-position"></h1>
+        </div>
+    </div>
+
+
+
+    <script src="./three.module.min.js"></script>
+    <script src="sphere.js"></script>
+    <script src="particle.js"></script>
+    <script src="mousePosition.js"></script>
+</body>
+
 </html>
