@@ -45,8 +45,9 @@
         }
 
         /* Adjustments for middiv and rightdiv */
-        .middiv{
+        .middiv, .rightdiv {
             width: 100%;
+            padding: 10px;
             box-sizing: border-box;
             overflow-x: auto;
             white-space: wrap;
@@ -60,7 +61,7 @@
             padding: 10px;
             box-sizing: border-box;
             overflow-x: auto;
-            white-space: wrap;
+            white-space: nowrap;
             display: flex;
             flex-wrap: nowrap;
             justify-content: flex-start;
@@ -90,6 +91,19 @@
     <div class="middiv">
         <div class="container">
             <h1>New Friend</h1>
+            <p>AI models help humans by enhancing our abilities and expanding what we can achieve. They transform how we work, learn, and solve problems.</p>
+        </div>
+        <div class="container">
+            <h1>Rust vs Java vs Haskell</h1>
+            <p>Comparing performance, safety, and functional programming strengths.</p>
+        </div>
+        <div class="container">
+            <a href="./side.html">
+                <h1>HackThon code example</h1>
+            </a>
+        </div>
+        <div class="container">
+            <h1>New Friend</h1>
                    </div>
         <div class="container">
             <h1>Rust vs Java vs Haskell</h1>
@@ -99,7 +113,6 @@
                 <h1>HackThon code example</h1>
             </a>
         </div>
-        
     </div>
     <div class="rightdiv">
         <div class="container">
