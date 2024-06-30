@@ -9,26 +9,32 @@
         /* Basic reset and styles */
         * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
-            background-color: #272727; /* Dark background */
-            color: #fff; /* White text */
+            background-color: #272727;
+            /* Dark background */
+            color: #fff;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
+            overflow: hidden;
         }
-        .bg {
-            background-image: url('bg.jpg'); /* Background image */
-            background-size: cover; /* Cover the entire container */
-            background-position: center; /* Center the background image */
-            padding: 20px;
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .container {
-            width: 100%;
-            height: 100%;
-            margin-bottom: 20px;
             text-align: center;
             z-index: 1;
             background-color: rgba(255, 255, 255, 0.1);
@@ -69,7 +75,7 @@
             justify-content: flex-start; /* Start align items */
             z-index: 1;
             flex-direction: row;
-        align-items: start;
+            align-items: center;
             background-color: rgba(34, 139, 174, 0.1);
             /* Semi-transparent white background */
             backdrop-filter: blur(10px);
@@ -94,6 +100,7 @@
         .middiv {
             overflow-y: auto;
             /* Enable vertical scrolling */
+            height: 100%;
             z-index: 1;
             background-color: rgba(34, 139, 174, 0.1);
             /* Semi-transparent white background */
@@ -107,7 +114,7 @@
 
         .middiv::-webkit-scrollbar,
         .rightdiv::-webkit-scrollbar {
-            width: 10px;
+            width: 3px;
             /* width of the scrollbar */
             height: 3px;
             /* height of the scrollbar */
@@ -137,19 +144,12 @@
 
         .bg {
             overflow-y: auto;
+            flex-direction: column;
             background-image: url('bg.jpg');
             background-size: cover;
             background-position: center;
-            font-family: Arial, sans-serif;
-            background-color: #272727;
-            /* Dark background */
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
@@ -166,20 +166,7 @@
             <p>Comparing performance, safety, and functional programming strengths.</p>
         </div>
         <div class="container">
-            <a href="./side.html">
-                <h1>HackThon code example</h1>
-            </a>
-        </div>
-        <div class="container">
-            <h1>New Friend</h1>
-            <p>AI models help humans by enhancing our abilities and expanding what we can achieve. They transform how we work, learn, and solve problems.</p>
-        </div>
-        <div class="container">
-            <h1>Rust vs Java vs Haskell</h1>
-            <p>Comparing performance, safety, and functional programming strengths.</p>
-        </div>
-        <div class="container">
-            <a href="./side.html">
+            <a href="./side.html" style="color: white;">
                 <h1>HackThon code example</h1>
             </a>
         </div>
@@ -200,18 +187,6 @@
         </div>
     </div>
     <script src="mousePosition.js"></script>
-    <script>
-        // Get screen width and height
-        const screenWidth = window.screen.width;
-        const screenHeight = window.screen.height;
-    
-        // Select the div element
-        const myDiv = document.getElementById('bg');
-    
-        // Set div size based on screen width and height
-        myDiv.style.width = `${screenWidth}px`;
-        myDiv.style.height = `${screenHeight}px`;
-    </script>
 </body>
 
 </html>
