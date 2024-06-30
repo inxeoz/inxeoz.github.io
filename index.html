@@ -12,7 +12,7 @@
             background-color: #272727; /* Dark background */
             color: #fff; /* White text */
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
             height: 100vh; /* Full viewport height */
@@ -24,6 +24,7 @@
             padding: 20px;
         }
         .container {
+            white-space: wrap;
             width: 100%;
             height: 100%;
             margin-bottom: 20px;
@@ -71,7 +72,7 @@
             overflow-y: auto; /* Enable vertical scrolling if content exceeds */
         }
         .rightdiv {
-            flex-direction: row;
+            flex-direction: column;
             align-items: flex-start;
             min-width: 300px; /* Minimum width to prevent overflow */
             overflow-x: auto; /* Enable horizontal scrolling if content exceeds */
@@ -98,17 +99,7 @@
                 <h1>HackThon code example</h1>
             </a>
         </div>
-        <div class="container">
-            <h1>New Friend</h1>
-                   </div>
-        <div class="container">
-            <h1>Rust vs Java vs Haskell</h1>
-                  </div>
-        <div class="container">
-            <a href="./side.html">
-                <h1>HackThon code example</h1>
-            </a>
-        </div>
+        
     </div>
     <div class="rightdiv">
         <div class="container">
