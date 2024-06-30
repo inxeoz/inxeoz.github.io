@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js Sphere and Particles Example</title>
+    <title>Horizontal Scroll Example</title>
     <style>
         /* Basic reset and styles */
         * {
@@ -24,7 +24,6 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
-
         }
 
         canvas {
@@ -36,7 +35,7 @@
         }
 
         .container {
-            text-align: left;
+            text-align: center;
             z-index: 1;
             background-color: rgba(255, 255, 255, 0.1);
             /* Semi-transparent white background */
@@ -56,9 +55,7 @@
             /* Lighter semi-transparent white on hover */
             backdrop-filter: blur(25px);
             font-size: large;
-
         }
-
 
         h1 {
             font-size: 3rem;
@@ -72,11 +69,13 @@
         }
 
         .rightdiv {
-            overflow-y: scroll;
-
-            height: 100%;
-            width: 30%;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            display: flex;
+            /* Use flexbox for horizontal alignment */
+            justify-content: flex-start; /* Start align items */
             z-index: 1;
+            flex-direction: row;
+            align-items: center;
             background-color: rgba(34, 139, 174, 0.1);
             /* Semi-transparent white background */
             backdrop-filter: blur(10px);
@@ -85,10 +84,22 @@
             /* Rounded corners */
             padding: 40px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            white-space: nowrap; /* Prevent wrapping of items */
+        }
+
+        .rightdiv .container {
+            flex: 0 0 auto; /* Prevent containers from growing */
+            min-width: 300px; /* Set a minimum width for containers */
+            margin-right: 20px; /* Add space between containers */
+        }
+
+        .rightdiv .container:last-child {
+            margin-right: 0; /* Remove margin from the last container */
         }
 
         .middiv {
-            overflow-y: scroll;
+            overflow-y: auto;
+            /* Enable vertical scrolling */
             height: 100%;
             z-index: 1;
             background-color: rgba(34, 139, 174, 0.1);
@@ -130,19 +141,25 @@
         .blurred {
             filter: blur(20px);
         }
+
+        .bg {
+            overflow-y: auto;
+            flex-direction: column;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
 
-<body>
-
-
-
+<body class="bg">
     <div class="middiv">
         <div class="container">
             <h1>New Friend</h1>
             <p>AI models help humans by enhancing our abilities and expanding what we can achieve. They transform
-                how we
-                work, learn, and solve problems.</p>
+                how we work, learn, and solve problems.</p>
         </div>
         <div class="container">
             <h1>Rust vs Java vs Haskell</h1>
@@ -152,13 +169,11 @@
             <a href="./side.html" style="color: white;">
                 <h1>HackThon code example</h1>
             </a>
-
         </div>
     </div>
     <div class="rightdiv">
         <div class="container">
-            <p>"Continue to breathe; the tide will carry you to new shores. Stay resilient; do not surrender." (0_1)
-            </p>
+            <p>"Continue to breathe; the tide will carry you to new shores. Stay resilient; do not surrender." (0_1)</p>
         </div>
         <div class="container">
             <h1>Game Plan</h1>
@@ -171,12 +186,6 @@
             <h1 id="mouse-position"></h1>
         </div>
     </div>
-
-
-
-    <script src="./three.module.min.js"></script>
-    <script src="sphere.js"></script>
-    <script src="particle.js"></script>
     <script src="mousePosition.js"></script>
 </body>
 
