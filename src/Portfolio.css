@@ -1,0 +1,47 @@
+body {
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+  }
+  
+  .bg-gradient {
+	background-image: url('./bg3.jpg');
+  }
+  
+  .portfolio-container {
+	max-width: 800px;
+  }
+  
+  .glass-card {
+	background: rgba(25, 129, 255, 0.452);
+	border-radius: 15px;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+  }
+
+
+  .flex-container {
+	display: flex;
+	align-items: center; /* Vertically centers items */
+	left: 0;
+	
+  }
+  
+  .text-container {
+	margin-left: 20px; /* Space between image and text */
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+	.flex-container {
+	  flex-direction: column; /* Stacks items vertically on smaller screens */
+	  align-items: center; /* Centers items horizontally */
+	}
+  
+	.text-container {
+	  margin-left: 0; /* Remove left margin when stacked */
+	  text-align: center; /* Center text when stacked */
+	}
+  }
+  
+  
