@@ -3,9 +3,6 @@ body {
 	font-family: 'Arial', sans-serif;
   }
   
-  .bg-gradient {
-	background-image: url('./bg3.jpg');
-  }
   
   .portfolio-container {
 	max-width: 800px;
