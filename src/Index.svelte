@@ -169,7 +169,7 @@
 
     >
         <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam"
-           style="text-decoration: none; color: white">
+           style="text-decoration: none; color: white" target="_blank">
             purushottam
 
         </a>
