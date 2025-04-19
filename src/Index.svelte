@@ -7,15 +7,23 @@
     let activeTab = 'Projects';
 
     const tabs = ['Projects', 'My Favorite', 'Interests', 'Favorite Site'];
+
+    let color = '#ff3e00';
 </script>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap');
 
+    :root {
+        --main-bg-color: #003049;
+        --secondary-main-bg-color: #000000;
+        --secondary-main-text-color: #000000;
+        --main-text-color: white;
+    }
+
     html, body {
         margin: 0;
         padding: 0;
-        background-color: #fafafa;
         color: #333;
         font-family: 'Inter', sans-serif;
     }
@@ -26,12 +34,13 @@
         align-items: center;
         padding: 6rem 2rem;
         gap: 3rem;
+        background-color: var(--main-bg-color);
     }
 
     h1 {
         font-family: 'DM Serif Display', serif;
         font-size: 3rem;
-        color: #6c6c6c;
+        color: var(--main-text-color);
         text-align: center;
         margin: 0;
     }
@@ -47,7 +56,7 @@
         cursor: pointer;
         border-radius: 50%;
         padding: 14px;
-        background-color: #fff;
+        background-color: white;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -66,20 +75,20 @@
         max-width: 640px;
         font-size: 1.25rem;
         text-align: center;
-        color: #666;
+        color: var(--main-text-color);
         line-height: 1.6;
         padding: 0 1rem;
     }
 
     a {
-        color: #5a5a5a;
+        color: var(--main-text-color);
         text-decoration: none;
         border-bottom: 1px solid transparent;
         transition: border-color 0.2s ease;
     }
 
     a:hover {
-        border-color: #b5b5b5;
+        color: var(--main-text-color);
     }
 
     .tabs {
@@ -94,13 +103,15 @@
         border-radius: 20px;
         cursor: pointer;
         font-size: 0.95rem;
-        color: #555;
-        background-color: #fff;
+        color: var(--main-text-color);
+        background-color: var(--main-bg-color);
         transition: all 0.2s ease;
     }
 
     .tab:hover {
         background-color: #f0f0f0;
+        color: var(--secondary-main-text-color);
+
     }
 
     .tab.active {
@@ -115,13 +126,13 @@
         max-width: 700px;
         text-align: center;
         font-size: 1rem;
-        color: #444;
+        color: var(--main-text-color);
         line-height: 1.6;
     }
 
     .intro-text {
         font-size: 1.25rem;
-        color: #666;
+        color: var(--main-text-color);
         text-align: center;
         max-width: 800px;
         padding: 1rem;
