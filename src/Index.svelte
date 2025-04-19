@@ -3,6 +3,7 @@
     import cat from './cat.svg';
     import music from './music.svg';
     import Cursor from "./Cursor.svelte";
+    import HackCompo from "./HackCompo.svelte";
 
     let activeTab = 'Projects';
 
@@ -254,6 +255,8 @@
             <p>I love sites that are clean, purposeful, and poetic — like <a href="https://are.na" target="_blank">Are.na</a> or <a href="https://read.cv" target="_blank">Read.cv</a>.</p>
         {/if}
     </div>
+
+    <HackCompo/>
 
     <div class="quote">
         "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
