@@ -249,6 +249,8 @@
             <p>Here are some of the cool things I've built — from web apps to random experiments.</p>
         {:else if activeTab === 'My Favorite'}
             <p>Books, songs, quotes, or memories — just a few of the things that inspire me daily.</p>
+            <HackCompo/>
+
         {:else if activeTab === 'Interests'}
             <p>Coding, design, philosophy, tech culture, maps, and all things creative.</p>
         {:else if activeTab === 'Favorite Site'}
@@ -256,7 +258,7 @@
         {/if}
     </div>
 
-    <HackCompo/>
+
 
     <div class="quote">
         "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
