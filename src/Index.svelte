@@ -2,201 +2,169 @@
     import map from './map.svg';
     import cat from './cat.svg';
     import music from './music.svg';
+    import Cursor from "./Cursor.svelte";
 
+    let activeTab = 'Projects';
+
+    const tabs = ['Projects', 'My Favorite', 'Interests', 'Favorite Site'];
 </script>
+
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap');
 
     html, body {
         margin: 0;
-        min-height: 100%;
-        min-width: 100%;
-        height: fit-content;
         padding: 0;
+        background-color: #fafafa;
+        color: #333;
+        font-family: 'Inter', sans-serif;
     }
 
-    body {
+    .container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: auto;
-        min-height: 100vh;
-
+        padding: 6rem 2rem;
+        gap: 3rem;
     }
 
-    * {
-        box-sizing: border-box;
-    }
-
-
-    /* Board */
-    .board-f8c1c1478a13 {
-        position: relative;
-        width: 100%;
-        height:auto;
-        background: #0466C8;
-        border-radius: 0px 0px 0px 0px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        align-content: stretch;
-        justify-content: center;
-        gap: 50px;
-        padding: 100px 50px 100px 50px;
-        z-index: 0;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        flex-grow: 1;
-    }
-
-    /* Board */
-    .board-f8c1c1478a14 {
-        position: relative;
-        width: 100%;
-        height: auto;
-        margin-top: 100px;
-        border-radius: 0px 0px 0px 0px;
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    /* Board */
-    .board-f8c2468f081c {
-        font-family: 'JetBrains Mono', serif;
-        font-size: 2.25rem;
-        color: white;
-        position: relative;
-        height: 100%;
-        background: none;
-        border-radius: 0px 0px 0px 0px;
-        flex: 1;
-        flex-shrink: 0;
-    }
-
-    /* Board */
-    .board-f8c1c1478a15 {
-        position: relative;
-        width: 100%;
-        height: auto;
-        border-radius: 0px 0px 0px 0px;
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        column-gap: 121px;
-        row-gap: 40px;
-        padding: 0px 0px 0px 0px;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
-    }
-
-    /* Board */
-    .board-f8c244a3d412 {
-        position: relative;
-        width: auto;
-        height: auto;
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border-radius: 0px 0px 0px 0px;
-        flex-shrink: 0;
-    }
-
-    /* Board */
-    .board-f8c242e1472c {
-        position: relative;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        height: auto;
-        background: none;
-        border-radius: 0px 0px 0px 0px;
-        flex-shrink: 0;
-    }
-
-    /* Board */
-    .board-f8c240ed9fd3 {
-        position: relative;
-        width: auto;
-        height: auto;
-        background: none;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0px 0px 0px 0px;
-        flex-shrink: 0;
-    }
-
-    /* Board */
-    .board-f8c1c1478a16 {
-        font-family: 'Samarkan', serif;
+    h1 {
+        font-family: 'DM Serif Display', serif;
         font-size: 3rem;
-        color: white;
-        position: relative;
-        width: 100%;
-        height: 87px;
-        border-radius: 0px 0px 0px 0px;
+        color: #6c6c6c;
+        text-align: center;
+        margin: 0;
+    }
+
+    .links {
         display: flex;
-        align-items: center;
-        align-content: center;
+        gap: 2rem;
         justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
     }
 
-
-    @font-face {
-        font-family: 'Samarkan';
-        font-style: normal;
-        font-weight: 400;
-        font-display: block;
-        src: url("custom.woff") format('woff');
-    }
-    button {
+    button.icon {
         all: unset;
         cursor: pointer;
+        border-radius: 50%;
+        padding: 14px;
+        background-color: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
+    button.icon:hover {
+        transform: scale(1.06);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .quote {
+        max-width: 640px;
+        font-size: 1.25rem;
+        text-align: center;
+        color: #666;
+        line-height: 1.6;
+        padding: 0 1rem;
+    }
+
+    a {
+        color: #5a5a5a;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+    }
+
+    a:hover {
+        border-color: #b5b5b5;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .tab {
+        padding: 0.6rem 1.2rem;
+        border: 1px solid #dcdcdc;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        color: #555;
+        background-color: #fff;
+        transition: all 0.2s ease;
+    }
+
+    .tab:hover {
+        background-color: #f0f0f0;
+    }
+
+    .tab.active {
+        background-color: #eaeaea;
+        border-color: #bbb;
+        color: #222;
+        font-weight: 600;
+    }
+
+    .tab-content {
+        margin-top: 2rem;
+        max-width: 700px;
+        text-align: center;
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.6;
+    }
 </style>
 
-<!-- frame: Board -->
-<div class="frame board-f8c1c1478a13">
-    <!-- frame: Board -->
-    <div class="frame board-f8c1c1478a16"
+<div class="container">
+    <Cursor />
 
-    >
-        <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam"
-           style="text-decoration: none; color: white" target="_blank">
+    <h1>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam" target="_blank">
             purushottam
-
         </a>
+    </h1>
 
+    <div class="links">
+        <button class="icon" on:click={() => window.open('https://medium.com/@inxeoz')}>
+            <img src={map} alt="Medium" />
+        </button>
+        <button class="icon" on:click={() => window.open('https://github.com/inxeoz/')}>
+            <img src={cat} alt="GitHub" />
+        </button>
+        <button class="icon" on:click={() => window.open('https://www.youtube.com/@inxeoz')}>
+            <img src={music} alt="YouTube" />
+        </button>
     </div>
-    <!-- frame: Board -->
-    <div class="frame board-f8c1c1478a15">
-        <!-- frame: Board -->
-        <button class="shape frame board-f8c240ed9fd3" on:click={()=>window.open('https://medium.com/@inxeoz')}>
-            <img src={map} alt="map"/>
-        </button>
-        <!-- frame: Board -->
-        <button class="shape frame board-f8c242e1472c" on:click={()=>window.open('https://github.com/inxeoz/')}>
-            <img src="{cat}" alt="cat"/>
-        </button>
-        <!-- frame: Board -->
-        <button class="shape frame board-f8c244a3d412" on:click={()=>window.open('https://www.youtube.com/@inxeoz')}>
-            <img src={music} alt="music"/>
-        </button>
 
+    <div class="tabs">
+        {#each tabs as tab}
+            <div
+                    class="tab {activeTab === tab ? 'active' : ''}"
+                    on:click={() => activeTab = tab}
+            >
+                {tab}
+            </div>
+        {/each}
     </div>
-    <!-- frame: Board -->
-    <div class="frame board-f8c1c1478a14">
-        <!-- frame: Board -->
-        <div class="shape frame board-f8c2468f081c">
-            "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even
-            speaks."
-        </div>
+
+    <div class="tab-content">
+        {#if activeTab === 'Projects'}
+            <p>Here are some of the cool things I've built — from web apps to random experiments.</p>
+        {:else if activeTab === 'My Favorite'}
+            <p>Books, songs, quotes, or memories — just a few of the things that inspire me daily.</p>
+        {:else if activeTab === 'Interests'}
+            <p>Coding, design, philosophy, tech culture, maps, and all things creative.</p>
+        {:else if activeTab === 'Favorite Site'}
+            <p>I love sites that are clean, purposeful, and poetic — like <a href="https://are.na" target="_blank">Are.na</a> or <a href="https://read.cv" target="_blank">Read.cv</a>.</p>
+        {/if}
+    </div>
+
+    <div class="quote">
+        "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
     </div>
 </div>
