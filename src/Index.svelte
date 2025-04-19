@@ -118,6 +118,81 @@
         color: #444;
         line-height: 1.6;
     }
+
+    .intro-text {
+        font-size: 1.25rem;
+        color: #666;
+        text-align: center;
+        max-width: 800px;
+        padding: 1rem;
+    }
+
+    /* Mobile-first responsive styling */
+    @media (max-width: 768px) {
+        .container {
+            padding: 4rem 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .links {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .links button.icon {
+            padding: 12px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            padding: 1rem;
+        }
+
+        .tabs {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .tab {
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1rem;
+        }
+    }
+
+    /* Larger screen styling */
+    @media (min-width: 769px) {
+        .container {
+            padding: 6rem 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .links {
+            gap: 2rem;
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+        }
+
+        .tabs {
+            flex-direction: row;
+        }
+
+        .tab {
+            padding: 0.6rem 1.2rem;
+        }
+    }
 </style>
 
 <div class="container">
@@ -139,6 +214,11 @@
         <button class="icon" on:click={() => window.open('https://www.youtube.com/@inxeoz')}>
             <img src={music} alt="YouTube" />
         </button>
+    </div>
+
+    <!-- New text section -->
+    <div class="intro-text">
+        <p>I am Purushottam, software developer, research enthusiast...</p>
     </div>
 
     <div class="tabs">
