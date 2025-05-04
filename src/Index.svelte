@@ -243,7 +243,7 @@
 <main>
 <div class="container">
 
-    {#if (Device.PointingAccuracy === 'coarse' && !Device.canHover )}
+    {#if (Device.PointingAccuracy !== 'coarse' && Device.canHover )}
     <Cursor />
     {/if}
 
