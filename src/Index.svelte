@@ -36,6 +36,8 @@
         padding: 6rem 2rem;
         gap: 3rem;
         background-color: var(--main-bg-color);
+        width: auto;
+        height: auto;
     }
 
     h1 {
@@ -130,6 +132,7 @@
         font-size: 1rem;
         color: var(--main-text-color);
         line-height: 1.6;
+        width: auto;
     }
 
     .intro-text {

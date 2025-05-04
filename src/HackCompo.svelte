@@ -15,12 +15,12 @@
             { text: "SARTHAK GOSWAMI", url: "https://www.youtube.com/@SundaySarthak" }
         ],
         "SITE:S": [
-            { text: "https://onlineminitools.com/", url: "https://onlineminitools.com/" },
-            { text: "https://devhints.io/", url: "https://devhints.io/" },
-            { text: "www.fairlynerdy.com", url: "https://www.fairlynerdy.com" },
-            { text: "https://www.mathsisfun.com/", url: "https://www.mathsisfun.com/" },
-            { text: "https://egyankosh.ac.in/handle/123456789/17990?mode=full", url: "https://egyankosh.ac.in/handle/123456789/17990?mode=full" },
-            { text: "https://zerotomastery.io/", url: "https://zerotomastery.io/" }
+            { text: "onlineminitools.com", url: "https://onlineminitools.com/" },
+            { text: "devhints.io", url: "https://devhints.io/" },
+            { text: "fairlynerdy.com", url: "https://www.fairlynerdy.com" },
+            { text: "mathsisfun.com", url: "https://www.mathsisfun.com/" },
+            { text: "egyankosh.ac.in", url: "https://egyankosh.ac.in/handle/123456789/17990?mode=full" },
+            { text: "zerotomastery.io", url: "https://zerotomastery.io/" }
         ],
         QUOTES: [
             "--> EVERY AND EACH TYPE OF PROBLEM HAS SOLUTION ALWAYS",
