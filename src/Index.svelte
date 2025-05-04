@@ -7,7 +7,7 @@
 
     let activeTab = 'Projects';
 
-    const tabs = ['Projects', 'My Favorite', 'Interests', 'Favorite Site'];
+    const tabs = ['Projects', 'My Favorite', 'Interests', ];
 
     let color = '#ff3e00';
 </script>
