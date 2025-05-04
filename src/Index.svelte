@@ -1,5 +1,5 @@
 <script>
-    import map from './assets/map.svg';
+    import article from'./assets/article.svg';
     import cat from './assets/cat.svg';
     import linkedin from './assets/linkedin.svg';
     import Cursor from "./Cursor.svelte";
@@ -87,8 +87,6 @@
         all: unset;
         cursor: pointer;
         padding: 10px;
-        background-color: white;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -98,8 +96,8 @@
     }
 
     img {
-        width: 2.25rem;
-        height: 2.25rem;
+        width: 3rem;
+        height: 3rem;
     }
 
     .quote {
@@ -247,7 +245,7 @@
 
     <div class="links">
         <button class="icon" on:click={() => window.open('https://medium.com/@inxeoz')}>
-            <img src={map} alt="Medium" />
+            <img src={article} alt="Medium" />
         </button>
         <button class="icon" on:click={() => window.open('https://github.com/inxeoz/')}>
             <img src={cat} alt="GitHub" />
@@ -280,7 +278,6 @@
         {:else if activeTab === 'My Favorite'}
             <p>Books, songs, quotes, or memories — just a few of the things that inspire me daily.</p>
             <HackCompo/>
-
             <div class="quote">
                 "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
             </div>

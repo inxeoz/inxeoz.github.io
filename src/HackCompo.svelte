@@ -57,12 +57,12 @@
 <style>
     .wrapper {
         background-color: #003049;
-        color: #00ff00;
+        color: var(--sec-color);
         font-family: "JetBrains Mono",serif;
         padding: 1.875rem;
         max-width: 56.25rem;
         margin: 2.5rem auto;
-        border: 2px solid #00ff00;
+        border: 2px solid var(--sec-color);
 
 
     }
@@ -76,7 +76,7 @@
 
     .tabs button {
         background: none;
-        color: #00ff00;
+        color: var(--sec-color);
         border: 2px solid transparent;
         padding: 0.625rem 1rem;
         cursor: pointer;
@@ -86,7 +86,7 @@
     }
 
     .tabs button.selected {
-        border-color: #00ff00;
+        border-color: var(--sec-color);
     }
 
     .content {
