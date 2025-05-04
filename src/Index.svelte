@@ -14,6 +14,9 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap');
+    p {
+        font-size: 1.25rem;
+    }
 
     :root {
         --main-bg-color: #003049;
