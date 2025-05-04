@@ -23,10 +23,9 @@
             { text: "https://zerotomastery.io/", url: "https://zerotomastery.io/" }
         ],
         QUOTES: [
-            "EVERY AND EACH TYPE OF PROBLEM HAS SOLUTION ALWAYS",
-            "YOU CAN'T BE ONLINE EVERY TIME , BE READY FOR OFFLINE MODE",
-            "AM I WASTING MY TIME",
-            "KEEP BREATHING , TIDE WILL COME TAKE SOMEWHERE ; DON'T GIVE UP"
+            "--> EVERY AND EACH TYPE OF PROBLEM HAS SOLUTION ALWAYS",
+            "--> YOU CAN'T BE ONLINE EVERY TIME , BE READY FOR OFFLINE MODE",
+            "--> KEEP BREATHING , TIDE WILL COME TAKE SOMEWHERE ; DON'T GIVE UP"
         ].map(q => ({ text: q, url: `https://www.google.com/search?q=${encodeURIComponent(q)}` })),
         SONGS: [
             { text: "No songs added yet...", url: "https://www.youtube.com/results?search_query=songs+playlist" }
@@ -57,13 +56,14 @@
 
 <style>
     .wrapper {
-        background-color: #000;
+        background-color: #003049;
         color: #00ff00;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: "JetBrains Mono",serif;
         padding: 30px;
         max-width: 900px;
         margin: 40px auto;
         border: 2px solid #00ff00;
+
 
     }
 
@@ -82,7 +82,6 @@
         cursor: pointer;
         font-size: 1.2rem;
         font-weight: bold;
-
         transition: all 0.3s ease;
     }
 
@@ -94,6 +93,7 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+        text-transform: lowercase;
     }
 
     .content-item {
@@ -103,6 +103,8 @@
         cursor: pointer;
         line-height: 1.5;
         text-decoration: none;
+        font-family: "JetBrains Mono",serif;
+        text-transform: lowercase;
     }
 
     .content-item:hover {
