@@ -6,15 +6,19 @@
     import HackCompo from "./HackCompo.svelte";
     import OverlayGoUp from "./util/OverlayGoUp.svelte";
 
+    import Device from 'svelte-device-info';
+
+    console.log(Device.PointingAccuracy); // 'coarse' or 'fine'
+    console.log(Device.canHover);         // false on most touchscreens
+
+
     let activeTab = 'Projects';
-
     const tabs = ['Projects', 'My Favorite', 'Interests', ];
-
-    const isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
 
 </script>
 
 <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap');
     p {
         font-size: 1.25rem;
@@ -238,7 +242,8 @@
 
 <main>
 <div class="container">
-    {#if isTouchScreen === false}
+
+    {#if (Device.PointingAccuracy === 'coarse' && !Device.canHover )}
     <Cursor />
     {/if}
 
