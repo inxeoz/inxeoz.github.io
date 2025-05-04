@@ -95,6 +95,8 @@
         display: flex;
         gap: 1rem;
         margin-top: 2rem;
+        justify-content: center;
+        align-items: center;
     }
 
     .tab {
