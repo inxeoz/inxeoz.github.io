@@ -10,6 +10,8 @@
 
     const tabs = ['Projects', 'My Favorite', 'Interests', ];
 
+    const isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
+
 </script>
 
 <style>
@@ -236,7 +238,9 @@
 
 <main>
 <div class="container">
+    {#if isTouchScreen === false}
     <Cursor />
+    {/if}
 
     <h1>
         <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam" target="_blank">
