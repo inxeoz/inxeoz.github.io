@@ -1,7 +1,7 @@
 <script>
-    import map from './map.svg';
-    import cat from './cat.svg';
-    import music from './music.svg';
+    import map from './assets/map.svg';
+    import cat from './assets/cat.svg';
+    import linkedin from './assets/linkedin.svg';
     import Cursor from "./Cursor.svelte";
     import HackCompo from "./HackCompo.svelte";
 
@@ -55,15 +55,14 @@
     button.icon {
         all: unset;
         cursor: pointer;
-        border-radius: 50%;
-        padding: 14px;
+        padding: 10px;
         background-color: white;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     button.icon:hover {
-        transform: scale(1.06);
+        transform: scale(1.26);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
@@ -212,7 +211,7 @@
 
     <h1>
         <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam" target="_blank">
-            purushottam
+            Purushottam
         </a>
     </h1>
 
@@ -223,9 +222,10 @@
         <button class="icon" on:click={() => window.open('https://github.com/inxeoz/')}>
             <img src={cat} alt="GitHub" />
         </button>
-        <button class="icon" on:click={() => window.open('https://www.youtube.com/@inxeoz')}>
-            <img src={music} alt="YouTube" />
+        <button class="icon" on:click={() => window.open('https://www.linkedin.com/in/purushottam-singram/')}>
+            <img src={linkedin} alt="linkedin" />
         </button>
+
     </div>
 
     <!-- New text section -->
@@ -251,6 +251,9 @@
             <p>Books, songs, quotes, or memories — just a few of the things that inspire me daily.</p>
             <HackCompo/>
 
+            <div class="quote">
+                "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
+            </div>
         {:else if activeTab === 'Interests'}
             <p>Coding, design, philosophy, tech culture, maps, and all things creative.</p>
         {:else if activeTab === 'Favorite Site'}
@@ -258,9 +261,4 @@
         {/if}
     </div>
 
-
-
-    <div class="quote">
-        "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
-    </div>
 </div>
