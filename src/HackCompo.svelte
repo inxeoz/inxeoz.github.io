@@ -59,9 +59,9 @@
         background-color: #003049;
         color: #00ff00;
         font-family: "JetBrains Mono",serif;
-        padding: 30px;
-        max-width: 900px;
-        margin: 40px auto;
+        padding: 1.875rem;
+        max-width: 56.25rem;
+        margin: 2.5rem auto;
         border: 2px solid #00ff00;
 
 
@@ -69,8 +69,8 @@
 
     .tabs {
         display: flex;
-        gap: 12px;
-        margin-bottom: 25px;
+        gap: 0.75rem;
+        margin-bottom: 1.563rem;
         flex-wrap: wrap;
     }
 
@@ -78,7 +78,7 @@
         background: none;
         color: #00ff00;
         border: 2px solid transparent;
-        padding: 10px 16px;
+        padding: 0.625rem 1rem;
         cursor: pointer;
         font-size: 1.2rem;
         font-weight: bold;
@@ -92,7 +92,7 @@
     .content {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 0.75rem;
         text-transform: lowercase;
     }
 
@@ -111,7 +111,7 @@
         color: orange;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 37.5rem) {
         .tabs {
             flex-direction: column;
         }
@@ -121,7 +121,7 @@
         }
 
         .wrapper {
-            padding: 20px;
+            padding: 1.25rem;
         }
     }
 </style>

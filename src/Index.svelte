@@ -95,12 +95,12 @@
     }
 
     img {
-        width: 36px;
-        height: 36px;
+        width: 2.25rem;
+        height: 2.25rem;
     }
 
     .quote {
-        max-width: 640px;
+        max-width: 40rem;
         font-size: 1.25rem;
         text-align: center;
         color: var(--main-text-color);
@@ -153,7 +153,7 @@
 
     .tab-content {
         margin-top: 2rem;
-        max-width: 700px;
+        max-width: 43.75rem;
         text-align: center;
         font-size: 1rem;
         color: var(--main-text-color);
@@ -170,7 +170,7 @@
     }
 
     /* Mobile-first responsive styling */
-    @media (max-width: 480px) {
+    @media (max-width: 30rem) {
         .container {
             padding: 4rem 1rem;
         }
@@ -206,7 +206,7 @@
     }
 
     /* Larger screen styling */
-    @media (min-width: 769px) {
+    @media (min-width: 48.063rem) {
         .container {
             padding: 6rem 2rem;
         }
