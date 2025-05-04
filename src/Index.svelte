@@ -4,6 +4,7 @@
     import linkedin from './assets/linkedin.svg';
     import Cursor from "./Cursor.svelte";
     import HackCompo from "./HackCompo.svelte";
+    import OverlayGoUp from "./util/OverlayGoUp.svelte";
 
     let activeTab = 'Projects';
 
@@ -234,6 +235,7 @@
     }
 </style>
 
+<main>
 <div class="container">
     <Cursor />
 
@@ -289,3 +291,6 @@
     </div>
 
 </div>
+
+</main>
+<OverlayGoUp/>
