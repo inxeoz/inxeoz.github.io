@@ -10,7 +10,6 @@
 
     const tabs = ['Projects', 'My Favorite', 'Interests', ];
 
-    let color = '#ff3e00';
 </script>
 
 <style>

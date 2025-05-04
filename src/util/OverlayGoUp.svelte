@@ -34,8 +34,8 @@
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        background-color: #1a1a1a;
-        color: white;
+        background-color: var(--sec-color);
+        color: var(--main-bg-color);
         border: none;
         padding: 0.75rem 1.25rem;
         border-radius: 999px;
@@ -46,7 +46,4 @@
         transition: background-color 0.2s ease-in-out;
     }
 
-    .go-up-button:hover {
-        background-color: #333;
-    }
 </style>
