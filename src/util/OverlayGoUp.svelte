@@ -1,29 +1,30 @@
 <script>
-    import { showGoUpButton } from "./store.js";
     import { fly } from 'svelte/transition';
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
 
+    let show = false;
 
     function scrollToTop() {
-        showGoUpButton.set(false);
+        show = false;
         window.scrollTo({ top: 0, behavior: 'smooth' });
-
     }
 
-    // Show button when scrolled past 200px
-    const handleScroll = () => {
-        showGoUpButton.set(window.scrollY > 0);
-    };
+    function handleScroll() {
+        show = window.scrollY > 0;
+    }
 
     onMount(() => {
-        console.log('mounted');
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        // Check initial scroll position
+        handleScroll();
     });
 
+    onDestroy(() => {
+        window.removeEventListener('scroll', handleScroll);
+    });
 </script>
-{#if $showGoUpButton}
-    <!-- Overlay-style floating button -->
+
+{#if show}
     <button class="go-up-button" on:click={scrollToTop} in:fly={{ y: 20, duration: 300 }}>
         ↑ Top
     </button>
@@ -45,5 +46,4 @@
         z-index: 9999;
         transition: background-color 0.2s ease-in-out;
     }
-
 </style>
