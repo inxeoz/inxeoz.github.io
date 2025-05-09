@@ -1,58 +1,47 @@
 <script lang="ts">
 
     import chak_logo from './assets/chak_logo.svg'
-    import link from './assets/link.svg'
+    import Project_temp from "./Project_temp.svelte";
+
 </script>
 
-<div class="project_main">
+<div class="project_main global_center_div">
 
-    <div class="chak global_center_div">
+    <Project_temp
+            project_logo={chak_logo},
+            project_bg_color="#83c5be"
+            project_link="https://chak.inxeoz.com/"
+            project_title="CHAK A VERSION CONTROL SYSTEM"
+            project_desc="I tried to build a version control system in Rust inspired by Git. Although it’s not complete, it is easily understandable and extendable"
+    />
 
-        <div class="chak_basic global_center_div">
-            <img src={chak_logo} alt="chak logo" height="50px">
-            CHAK A VERSION CONTROL SYSTEM
-            <div class="links global_center_div"  on:click={() => window.open('https://chak.inxeoz.com/')}>
-                <img src={link} alt="link to project chak" height="25px">
-            </div>
-        </div>
+    <Project_temp
+            project_bg_color="#f5cb5c"
+            project_title="NRISETU A MOBILE APPLICATION USING WEBSCRAPPING"
+            project_link="https://nrisetu.inxeoz.com/"
+            project_desc="NriSetu is an unofficial mobile application for NRI Institute. It helps students
+        easily access notifications, institute fee details, and payment
+        history via a React Native application."
 
-    </div>
+    >
+
+        <img src={chak_logo} alt="" height="25px">
+        </Project_temp>
+
 
 </div>
 
 <style>
 
-    .links {
-        background: #051634;
-        padding: 20px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
 
     .project_main {
         height: 100%;
         width: 100%;
+        flex-direction: column;
+        gap: 1rem;
 
     }
 
-    .chak {
-        color: #051634;
-        font-weight: bold;
-        background: #489fb5;
-        padding: 20px;
-        gap: 20px;
-        text-wrap: auto;
-        border: 5px solid #051634;
-        justify-content: space-around;
-        font-family: "JetBrains Mono", monospace;
-    }
 
-    .chak_basic {
-        width: 100%;
-        gap: 20px;
-        text-wrap: auto;
-        justify-content: space-around;
-        font-family: "JetBrains Mono", monospace;
-    }
 
 </style>
