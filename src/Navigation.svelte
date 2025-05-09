@@ -63,7 +63,6 @@
         max-width: 0;
         overflow: hidden;
         display: inline-block;
-        color: white;
         transform: translateY(12px); /* subtle slide up */
         pointer-events: none;
         font-style: italic;
@@ -83,8 +82,8 @@
     .active_tab {
         color: var(--main-bg-color);
         padding: 0.8rem;
-        background: #ffffff;
-        border: 1px solid white;
+        background: var(--sec-color);
+        border: 2px solid black;
         flex-direction: row;
         height: auto;
         width: auto;
@@ -94,12 +93,11 @@
     }
 
     .tab {
-        color: white;
         padding: 0.8rem;
         flex-direction: row;
         background: var(--main-bg-color);
         height: auto;
-        border: 2px solid white;
+        border: 3px solid black;
         border-radius: 50px;
     }
 
