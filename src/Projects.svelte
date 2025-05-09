@@ -18,7 +18,7 @@
     <Project_temp
             project_bg_color="#a9b4c2"
             project_sec_color="#1c2321"
-            project_title="NRISETU A MOBILE APPLICATION USING WEBSCRAPPING"
+            project_title="NRISETU A MOBILE APPLICATION"
             project_link="https://nrisetu.inxeoz.com/"
             project_desc="NriSetu is an unofficial mobile application for NRI Institute. It helps students
         easily access notifications, institute fee details, and payment

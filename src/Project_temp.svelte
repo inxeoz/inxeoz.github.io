@@ -60,16 +60,15 @@
         gap: 2rem;
         text-wrap: auto;
         border: 5px solid #051634;
-        justify-content: space-around;
+        justify-content: center;
         font-family: "JetBrains Mono", monospace;
         flex-direction: column;
     }
 
     .basic {
         width: 100%;
-        gap: 2rem;
         text-wrap: auto;
-        justify-content: space-around;
+        justify-content: space-between;
         font-family: "JetBrains Mono", monospace;
         padding-bottom: 1rem;
         border-bottom: 3px solid var(--project-sec-color);
