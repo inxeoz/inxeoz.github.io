@@ -97,7 +97,7 @@
         flex-direction: row;
         background: var(--main-bg-color);
         height: auto;
-        border: 3px solid black;
+        border: 3px solid #669bbc;
         border-radius: 50px;
     }
 
