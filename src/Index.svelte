@@ -12,14 +12,10 @@
 
     console.log(Device.PointingAccuracy); // 'coarse' or 'fine'
     console.log(Device.canHover);         // false on most touchscreens
-
 </script>
-
-
 
 <main>
 <div class="container">
-
     <OverlayGoUp/>
     <Cursor />
 

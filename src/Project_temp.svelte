@@ -52,7 +52,7 @@
 
 
     .project {
-        color: #051634;
+        color: var(--project-sec-color);
         font-weight: bold;
         background: var(--project-bg-color);
 
