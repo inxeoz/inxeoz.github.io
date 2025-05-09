@@ -25,7 +25,7 @@
         {project_title}
 
         {#if project_link.length > 0}
-            <div class="links global_center_div" on:click={() => window.open('https://chak.inxeoz.com/')}>
+            <div class="links global_center_div" on:click={() => window.open(project_link)}>
                 <img src={link} alt="link to project chak" height="25px">
             </div>
         {/if}
