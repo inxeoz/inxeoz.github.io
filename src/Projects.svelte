@@ -24,8 +24,6 @@
         history via a React Native application."
 
     >
-
-        <img src={chak_logo} alt="" height="25px">
         </Project_temp>
 
 
