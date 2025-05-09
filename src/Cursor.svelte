@@ -1,32 +1,50 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
+    import Device from "svelte-device-info";
 
     let cursorRounded;
     let cursorPointed;
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let roundedX = 0;
-    let roundedY = 0;
+    let mouseX = 0, mouseY = 0;
+    let roundedX = 0, roundedY = 0;
 
+    let animationFrame;
+
+    // Device capability check
+    const showCursor = Device.PointingAccuracy !== 'coarse' && Device.canHover;
+
+    // Linear interpolation for smooth movement
     const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
 
-    const animate = () => {
+    function onMouseMove(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }
+
+    function animate() {
         roundedX = lerp(roundedX, mouseX, 0.15);
         roundedY = lerp(roundedY, mouseY, 0.15);
 
-        cursorRounded.style.transform = `translate3d(${roundedX}px, ${roundedY}px, 0)`;
-        cursorPointed.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        if (cursorRounded) {
+            cursorRounded.style.transform = `translate3d(${roundedX}px, ${roundedY}px, 0)`;
+        }
+        if (cursorPointed) {
+            cursorPointed.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        }
 
-        requestAnimationFrame(animate);
-    };
+        animationFrame = requestAnimationFrame(animate);
+    }
 
     onMount(() => {
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        animate();
+        if (showCursor) {
+            window.addEventListener('mousemove', onMouseMove);
+            animate();
+        }
+    });
+
+    onDestroy(() => {
+        window.removeEventListener('mousemove', onMouseMove);
+        if (animationFrame) cancelAnimationFrame(animationFrame);
     });
 </script>
 
@@ -57,7 +75,8 @@
         backdrop-filter: blur(3px);
         box-shadow: 0 0 12px rgba(0, 255, 170, 0.7), 0 0 30px rgba(0, 255, 170, 0.4);
         transform: translate3d(-100px, -100px, 0);
-        transition: border-color 0.3s ease;
+        transition: border-color 0.3s;
+        /* Remove :hover selector (not needed for pointer-events:none) */
     }
 
     .pointed {
@@ -68,11 +87,9 @@
         box-shadow: 0 0 8px #0ff, 0 0 20px #0fa;
         transform: translate3d(-100px, -100px, 0);
     }
-
-    .cursor:hover .rounded {
-        border-color: rgba(255, 255, 255, 0.9);
-    }
 </style>
 
-<div class="cursor rounded" bind:this={cursorRounded}></div>
-<div class="cursor pointed" bind:this={cursorPointed}></div>
+{#if showCursor}
+    <div class="cursor rounded" bind:this={cursorRounded}></div>
+    <div class="cursor pointed" bind:this={cursorPointed}></div>
+{/if}

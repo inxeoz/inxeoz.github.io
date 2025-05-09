@@ -19,11 +19,7 @@
 
 <main>
 <div class="container">
-
-    {#if (Device.PointingAccuracy !== 'coarse' && Device.canHover )}
     <Cursor />
-    {/if}
-
     <h1>
         <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam" target="_blank">
             Purushottam
