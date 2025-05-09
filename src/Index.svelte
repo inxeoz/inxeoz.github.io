@@ -7,6 +7,7 @@
     import OverlayGoUp from "./util/OverlayGoUp.svelte";
 
     import Device from 'svelte-device-info';
+    import Projects from "./Projects.svelte";
 
     console.log(Device.PointingAccuracy); // 'coarse' or 'fine'
     console.log(Device.canHover);         // false on most touchscreens
@@ -16,6 +17,73 @@
     const tabs = ['Projects', 'My Favorite', 'Interests', ];
 
 </script>
+
+
+
+<main>
+<div class="container">
+
+    {#if (Device.PointingAccuracy !== 'coarse' && Device.canHover )}
+    <Cursor />
+    {/if}
+
+    <h1>
+        <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam" target="_blank">
+            Purushottam
+        </a>
+    </h1>
+
+    <div class="links">
+        <button class="icon" on:click={() => window.open('https://medium.com/@inxeoz')}>
+            <img src={article} alt="Medium" />
+        </button>
+        <button class="icon" on:click={() => window.open('https://github.com/inxeoz/')}>
+            <img src={cat} alt="GitHub" />
+        </button>
+        <button class="icon" on:click={() => window.open('https://www.linkedin.com/in/purushottam-singram/')}>
+            <img src={linkedin} alt="linkedin" />
+        </button>
+
+    </div>
+
+    <!-- New text section -->
+    <div class="intro-text">
+        <p>I am Purushottam, software developer, research enthusiast...</p>
+    </div>
+
+    <div class="tabs">
+        {#each tabs as tab}
+            <div
+                    class="tab {activeTab === tab ? 'active' : ''}"
+                    on:click={() => activeTab = tab}
+            >
+                {tab}
+            </div>
+        {/each}
+    </div>
+
+    <div class="tab-content global_center_div">
+        {#if activeTab === 'Projects'}
+            <p>Here are some of the cool things I've built — from web apps to random experiments.</p>
+            <Projects/>
+        {:else if activeTab === 'My Favorite'}
+            <p>Books, songs, quotes, or memories — just a few of the things that inspire me daily.</p>
+            <HackCompo/>
+            <div class="quote">
+                "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
+            </div>
+        {:else if activeTab === 'Interests'}
+            <p>Coding, design, philosophy, tech culture, maps, and all things creative.</p>
+        {:else if activeTab === 'Favorite Site'}
+            <p>I love sites that are clean, purposeful, and poetic — like <a href="https://are.na" target="_blank">Are.na</a> or <a href="https://read.cv" target="_blank">Read.cv</a>.</p>
+        {/if}
+    </div>
+
+</div>
+
+</main>
+<OverlayGoUp/>
+
 
 <style>
 
@@ -166,6 +234,8 @@
         color: var(--main-text-color);
         line-height: 1.6;
         width: auto;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .intro-text {
@@ -239,66 +309,3 @@
         }
     }
 </style>
-
-<main>
-<div class="container">
-
-    {#if (Device.PointingAccuracy !== 'coarse' && Device.canHover )}
-    <Cursor />
-    {/if}
-
-    <h1>
-        <a href="https://www.google.com/search?client=firefox-b-d&q=define+purushottam" target="_blank">
-            Purushottam
-        </a>
-    </h1>
-
-    <div class="links">
-        <button class="icon" on:click={() => window.open('https://medium.com/@inxeoz')}>
-            <img src={article} alt="Medium" />
-        </button>
-        <button class="icon" on:click={() => window.open('https://github.com/inxeoz/')}>
-            <img src={cat} alt="GitHub" />
-        </button>
-        <button class="icon" on:click={() => window.open('https://www.linkedin.com/in/purushottam-singram/')}>
-            <img src={linkedin} alt="linkedin" />
-        </button>
-
-    </div>
-
-    <!-- New text section -->
-    <div class="intro-text">
-        <p>I am Purushottam, software developer, research enthusiast...</p>
-    </div>
-
-    <div class="tabs">
-        {#each tabs as tab}
-            <div
-                    class="tab {activeTab === tab ? 'active' : ''}"
-                    on:click={() => activeTab = tab}
-            >
-                {tab}
-            </div>
-        {/each}
-    </div>
-
-    <div class="tab-content">
-        {#if activeTab === 'Projects'}
-            <p>Here are some of the cool things I've built — from web apps to random experiments.</p>
-        {:else if activeTab === 'My Favorite'}
-            <p>Books, songs, quotes, or memories — just a few of the things that inspire me daily.</p>
-            <HackCompo/>
-            <div class="quote">
-                "The world has tied beauty to virtue so tightly that an 'ugly' face is mistaken for failure before it even speaks."
-            </div>
-        {:else if activeTab === 'Interests'}
-            <p>Coding, design, philosophy, tech culture, maps, and all things creative.</p>
-        {:else if activeTab === 'Favorite Site'}
-            <p>I love sites that are clean, purposeful, and poetic — like <a href="https://are.na" target="_blank">Are.na</a> or <a href="https://read.cv" target="_blank">Read.cv</a>.</p>
-        {/if}
-    </div>
-
-</div>
-
-</main>
-<OverlayGoUp/>

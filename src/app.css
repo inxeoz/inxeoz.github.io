@@ -3,3 +3,9 @@
 
   --main-bg-color: #003049;
 }
+
+.global_center_div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
