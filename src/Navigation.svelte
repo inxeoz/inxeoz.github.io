@@ -1,9 +1,9 @@
 <script lang="ts">
     import {Tabs, activeTab} from './lib/store'
 
-    import love from './assets/love.svg'
-    import fav from './assets/fav.svg'
-    import project from './assets/project.svg'
+    let love = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/love.svg"
+    let fav = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/fav.svg"
+    let project = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/project.svg"
 
     function onTabClick(tab: Tabs) {
         activeTab.set(tab)

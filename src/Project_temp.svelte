@@ -1,7 +1,7 @@
 <script lang="ts">
 
-    import chak_logo from './assets/chak_logo.svg'
-    import link from './assets/link.svg'
+    let chak_logo = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/chak_logo.svg"
+    let link = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/link.svg"
 
     export let project_title = "---";
     export let project_logo = chak_logo;
@@ -9,7 +9,6 @@
     export let project_desc = '';
     export let project_bg_color = "#489fb5"
     export let project_sec_color = "#051634"
-
 
 </script>
 

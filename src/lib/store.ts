@@ -6,3 +6,15 @@ export enum Tabs {
 
 }
 export const activeTab = writable(Tabs.Projects);
+
+
+export const StartChnageMusicTimingFromSlider = writable(false);
+export const activeMusicId = writable<number | null>(null);
+
+export enum MusicState {
+    Playing = 'playing',
+    Paused = 'paused',
+}
+
+export const OnTimeMusicStateChange = writable<MusicState>(MusicState.Paused);
+export const LastPlaybackTime = writable(0)

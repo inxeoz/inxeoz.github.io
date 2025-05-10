@@ -1,7 +1,8 @@
 <script>
-    import article from'./assets/article.svg';
-    import cat from './assets/cat.svg';
-    import linkedin from './assets/linkedin.svg';
+    let article ="https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/article.svg"
+    let cat = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/cat.svg"
+    let linkedin = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/linkedin.svg"
+
     import Cursor from "./Cursor.svelte";
     import HackCompo from "./HackCompo.svelte";
     import {activeTab, Tabs} from "./lib/store.js";

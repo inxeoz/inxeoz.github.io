@@ -1,7 +1,8 @@
 <script lang="ts">
 
-    import chak_logo from './assets/chak_logo.svg'
+    let chak_logo = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/chak_logo.svg"
     import Project_temp from "./Project_temp.svelte";
+    import MusicCard from "./lib/MusicCard.svelte";
 
 </script>
 
@@ -44,8 +45,15 @@
             project_desc="It’s kind of a personal project. In this project, I built a portfolio for my friend Varn. He is a music artist and dancer, currently in the early stage of his career. So, this project is a kind of gift to him"
 
 
-    />
+    >
+        <MusicCard
+                poster_svg="https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/music_thumbnail/intzar_song.svg"
+                song_title="Intzar "
+                audioSrc="https://varn-music-list.s3.ap-south-1.amazonaws.com/INTZAR+-+VARN+-+VISUALISER.mp3"
+                poster_background_color="#0466c8"
+                music_id={1010}/>
 
+        </Project_temp>
 
 
 </div>
@@ -60,7 +68,6 @@
         gap: 1rem;
 
     }
-
 
 
 </style>
