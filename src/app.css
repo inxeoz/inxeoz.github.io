@@ -3,6 +3,12 @@
   --main-bg-color: #003049;
 }
 
+:global(button) { /* this is importabnt */
+  all: unset;
+  cursor: pointer;
+}
+
+
 .global_center_div {
   justify-content: center;
   align-items: center;
