@@ -1,6 +1,5 @@
 <script lang="ts">
 
-    let chak_logo = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/chak_logo.svg"
     import Project_temp from "./Project_temp.svelte";
     import MusicCard from "./lib/MusicCard.svelte";
 
@@ -9,7 +8,7 @@
 <div class="project_main global_center_div">
 
     <Project_temp
-            project_logo={chak_logo},
+            project_logo={"https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/chak_logo.svg"}
             project_bg_color="#83c5be"
             project_link="https://chak.inxeoz.com/"
             project_title="CHAK A VERSION CONTROL SYSTEM"
@@ -54,7 +53,6 @@
                 audioSrc="https://varn-music-list.s3.ap-south-1.amazonaws.com/INTZAR+-+VARN+-+VISUALISER.mp3"
                 poster_background_color="#0466c8"
                 music_id={1010}/>
-
         </Project_temp>
 
 

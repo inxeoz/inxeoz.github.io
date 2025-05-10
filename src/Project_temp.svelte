@@ -1,10 +1,9 @@
 <script lang="ts">
 
-    let chak_logo = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/chak_logo.svg"
     let link = "https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/link.svg"
 
     export let project_title = "---";
-    export let project_logo = chak_logo;
+    export let project_logo = "";
     export let project_link = '';
     export let project_desc = '';
     export let project_bg_color = "#489fb5"
@@ -18,15 +17,23 @@
     <div class="basic global_center_div">
 
         {#if project_logo}
-            <img src={chak_logo} alt="chak logo" height="50px">
+            <img src={project_logo} alt="chak logo" height="50px">
         {/if}
 
         {project_title}
 
         {#if project_link.length > 0}
-            <div class="links global_center_div" on:click={() => window.open(project_link)}>
-                <img src={link} alt="link to project chak" height="25px">
+            <div class="links global_center_div">
+
+
+<!--                <div class="link_icon global_center_div" on:click={() => window.open(project_link)}>-->
+<!--                    <img src={link} alt="link to project chak" height="25px">-->
+<!--                </div>-->
+                {project_link}
+
+
             </div>
+
         {/if}
 
     </div>
@@ -45,16 +52,15 @@
     .links {
         background: var(--project-sec-color);
         padding: 20px;
-        border-radius: 50%;
         cursor: pointer;
+        color:white;
+        border-radius: 50px;
     }
 
 
     .project {
         color: var(--project-sec-color);
-        font-weight: bold;
         background: var(--project-bg-color);
-
         padding: 1rem;
         gap: 2rem;
         text-wrap: auto;
@@ -62,6 +68,7 @@
         justify-content: center;
         font-family: "JetBrains Mono", monospace;
         flex-direction: column;
+        font-weight: 500;
     }
 
     .basic {
@@ -71,6 +78,10 @@
         font-family: "JetBrains Mono", monospace;
         padding-bottom: 1rem;
         border-bottom: 3px solid var(--project-sec-color);
+        font-weight: 700;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
 
     }
 
