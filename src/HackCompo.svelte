@@ -64,8 +64,7 @@
         max-width: 56.25rem;
         margin: 2.5rem auto;
         border: 2px solid var(--sec-color);
-        width: 100%;
-
+        min-width: 18rem;
 
     }
 

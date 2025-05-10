@@ -218,7 +218,6 @@
         font-size: 1rem;
         color: var(--main-text-color);
         line-height: 1.6;
-        width: auto;
         flex-direction: column;
         gap: 1rem;
     }
