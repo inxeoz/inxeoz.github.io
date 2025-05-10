@@ -96,7 +96,7 @@
         color: var(--project-sec-color);
         background: var(--project-bg-color);
         padding: 1rem;
-        gap: 2rem;
+        gap: 1rem;
         text-wrap: auto;
         border: 5px solid #051634;
         justify-content: center;
