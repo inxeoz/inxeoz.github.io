@@ -13,7 +13,10 @@
     } from "./store";
     import {audioInstance, pauseMusic, playMusic, seekMusic, setSrcMusic, stopMusic} from './audioStore';
     import {onDestroy, onMount} from "svelte";
-
+    export let card_stroke_width=0.4;
+    export let card_stroke_color="#001136";
+    export let title_color = "#fff"
+    export let music_player_color = "#000"
     export let poster_background_color = '#eb5e28';
     export let song_title = "(0_1)";
     export let poster_svg: string = "";
@@ -123,7 +126,13 @@
 
 </script>
 
-<div class="music_card_main global_center_div" style="--poster-background-color: {poster_background_color}">
+<div class="music_card_main global_center_div" style="--poster-background-color: {poster_background_color};
+--card-stroke-width: {card_stroke_width}rem;
+--card-stroke-color: {card_stroke_color};
+--title-color: {title_color};
+--music-player-color: {music_player_color};
+
+">
     <div class="music_card_player global_center_div">
         <div class="music_poster">
             <img src={poster_svg} alt="poster image">
@@ -162,7 +171,7 @@
     }
 
     .music_info {
-        color: #fff;
+        color: var(--title-color);
         font-style: italic;
         font-weight: bold;
     }
@@ -177,13 +186,13 @@
         background: var(--poster-background-color);
         padding: 20px;
         flex-direction: column;
-        border: 4px solid #000000;
+        border: var(--card-stroke-width) solid var(--card-stroke-color) ;
     }
 
     .music_player {
         height: 50px;
         width: 100%;
-        background: #000;
+        background: var(--music-player-color);
         justify-content: space-evenly;
         gap: 2px;
     }

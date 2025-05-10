@@ -38,8 +38,8 @@
     />
 
     <Project_temp
-            project_bg_color="#8bbeb2"
-            project_sec_color="#18314f"
+            project_bg_color="#669bbc"
+            project_sec_color="#001233"
             project_title="MUSIC ARTIST VARN's PORTFOLIO"
             project_link="https://varn.inxeoz.com/"
             project_desc="It’s kind of a personal project. In this project, I built a portfolio for my friend Varn. He is a music artist and dancer, currently in the early stage of his career. So, this project is a kind of gift to him"
@@ -47,6 +47,8 @@
 
     >
         <MusicCard
+                title_color="#000"
+                music_player_color="#001233"
                 poster_svg="https://varn-music-list.s3.ap-south-1.amazonaws.com/assets/music_thumbnail/intzar_song.svg"
                 song_title="Intzar "
                 audioSrc="https://varn-music-list.s3.ap-south-1.amazonaws.com/INTZAR+-+VARN+-+VISUALISER.mp3"
