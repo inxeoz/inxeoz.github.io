@@ -23,9 +23,9 @@
             { text: "zerotomastery.io", url: "https://zerotomastery.io/" }
         ],
         QUOTES: [
-            "--> EVERY AND EACH TYPE OF PROBLEM HAS SOLUTION ALWAYS",
-            "--> YOU CAN'T BE ONLINE EVERY TIME , BE READY FOR OFFLINE MODE",
-            "--> KEEP BREATHING , TIDE WILL COME TAKE SOMEWHERE ; DON'T GIVE UP"
+            " \"EVERY AND EACH TYPE OF PROBLEM HAS SOLUTION ALWAYS\" ",
+            " \"YOU CAN'T BE ONLINE EVERY TIME , BE READY FOR OFFLINE MODE\" ",
+            " \"KEEP BREATHING , TIDE WILL COME TAKE SOMEWHERE ; DON'T GIVE UP\" "
         ].map(q => ({ text: q, url: `https://www.google.com/search?q=${encodeURIComponent(q)}` })),
         SONGS: [
             { text: "No songs added yet...", url: "https://www.youtube.com/results?search_query=songs+playlist" }
@@ -93,7 +93,7 @@
     .content {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
         text-transform: lowercase;
     }
 
