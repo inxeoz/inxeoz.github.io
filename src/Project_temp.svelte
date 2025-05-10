@@ -19,21 +19,16 @@
         {#if project_logo}
             <img src={project_logo} alt="chak logo" height="50px">
         {/if}
+        <div class="project_title global_center_div">
+            {project_title}
+        </div>
 
-        {project_title}
 
         {#if project_link.length > 0}
-            <button class="links global_center_div" on:click={() => window.open(project_link)}>
 
-
-                <!--                <div class="link_icon global_center_div" on:click={() => window.open(project_link)}>-->
-                <!--                    <img src={link} alt="link to project chak" height="25px">-->
-                <!--                </div>-->
-                {project_link.slice(8, project_link.length - 1)}
-
-
-            </button>
-
+                <button class="links global_center_div"  on:click={() => window.open(project_link)}>
+                    {project_link.slice(8, project_link.length - 1)}
+                </button>
         {/if}
 
     </div>
@@ -42,11 +37,11 @@
         <div class="desc" style="height: {showFullDesc ? 'auto' : '50px'}; overflow: hidden;">
             {project_desc  }
         </div>
-        {#if project_desc.length > 100 && !showFullDesc}
+        {#if project_desc.length > 200 && !showFullDesc}
             ...
             <button class="more-btn" on:click={() => showFullDesc = true}>More</button>
         {/if}
-        {#if showFullDesc && project_desc.length > 100}
+        {#if showFullDesc && project_desc.length > 200}
             <button class="more-btn" on:click={() => showFullDesc = false}>Less</button>
         {/if}
     {/if}
@@ -58,6 +53,12 @@
 
 
 <style>
+
+
+
+.project_title {
+    flex-grow: 2;
+}
 
     .more-btn {
         all: unset;
@@ -84,12 +85,9 @@
         cursor: pointer;
         color: white;
         border-radius: 50px;
-
+        overflow: hidden;
     }
 
-    .links:hover {
-        height: 100%;
-    }
 
 
     .project {
@@ -108,7 +106,7 @@
     .basic {
         width: 100%;
         text-wrap: auto;
-        justify-content: space-evenly;
+        justify-content:  space-between;
         font-family: "JetBrains Mono", monospace;
         padding-bottom: 1rem;
         border-bottom: 3px solid var(--project-sec-color);
