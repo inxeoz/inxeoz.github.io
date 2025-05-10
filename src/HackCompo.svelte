@@ -33,7 +33,7 @@
     };
 </script>
 
-<div class="wrapper">
+<div class="wrapper global_center_div">
     <div class="tabs">
         {#each tabs as tab}
             <button
@@ -56,6 +56,7 @@
 
 <style>
     .wrapper {
+        flex-direction: column;
         background-color: #003049;
         color: var(--sec-color);
         font-family: "JetBrains Mono",serif;
@@ -63,6 +64,7 @@
         max-width: 56.25rem;
         margin: 2.5rem auto;
         border: 2px solid var(--sec-color);
+        width: 100%;
 
 
     }
