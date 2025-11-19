@@ -1,0 +1,1 @@
+pandoc README.md -s -c min.css -o index.html
