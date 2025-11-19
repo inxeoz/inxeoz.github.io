@@ -47,6 +47,8 @@ strong {
 a {
   color: var(--accent);
   text-decoration: none;
+  display: inline-block; /* keeps social links horizontal */
+  margin-right: 0.35rem; /* slight spacing */
 }
 
 a:hover {
