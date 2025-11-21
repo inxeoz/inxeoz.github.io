@@ -3,13 +3,17 @@
 
 I am <span class="accent">**Purushottam**</span> — software developer, designer, and research enthusiast.
 
-**Email:** [hello@inxeoz.com](mailto:hello@inxeoz.com)
 
 **Blog:** [http://localhost:8080/](https://blog.inxeoz.com)
 
 **Social:** [GitHub](https://github.com/inxeoz/) · [Dribbble](https://dribbble.com/inxeoz) · [LinkedIn](https://www.linkedin.com/in/purushottam-singram/) · [Medium](https://medium.com/@inxeoz)
 
+
+**Email:** [hello@inxeoz.com](mailto:hello@inxeoz.com)
+
 <span class="accent">`inxeoz [ IN-zee-ohz ]`</span>
+
+
 
 </div>
 </div>
