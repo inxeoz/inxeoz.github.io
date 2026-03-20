@@ -7,15 +7,14 @@
   --border: #e5e7eb;
   --code-bg: #f5f5f5;
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #e6edf3;
-    --muted: #9ca3af;
-    --bg: #0d1117;
-    --accent: #58a6ff;
+    --text: #e6e1dc;
+    --muted: #a8a29e;
+    --bg: #111827;
+    --accent: #60a5fa;
     --border: #1f2937;
-    --code-bg: #161b22;
+    --code-bg: #1f2937;
   }
 }
 
