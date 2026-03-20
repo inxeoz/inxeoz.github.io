@@ -27,10 +27,10 @@ jobs:
             -s \
             -M title="Purushottam"
 
-      - name: Commit dist folder
+      - name: Commit index.html
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add dist
+          git add index.html
           git commit -m "Auto-build site" || echo "No changes"
           git push
