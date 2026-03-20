@@ -23,23 +23,31 @@ vertical-align: middle;
 </style>
   <style type="text/css">
 :root {
---text: #1a1a1a;
---muted: #6b7280;
---bg: #ffffff;
---accent: #2563eb;
---border: #e5e7eb;
---code-bg: #f5f5f5;
+--bg: #edf6f9;
+--text: #1f2933;
+--muted: #5f6c72;
+--accent: #006d77;
+--accent-soft: #83c5be;
+--warm: #e29578;
+--warm-soft: #ffddd2;
+--border: #d9e5ea;
+--code-bg: #ffffff;
 }
+
 @media (prefers-color-scheme: dark) {
 :root {
---text: #e6e1dc;
---muted: #a8a29e;
---bg: #111827;
---accent: #60a5fa;
---border: #1f2937;
---code-bg: #1f2937;
+--bg: #0f2027;
+--text: #edf6f9;
+--muted: #a8c7c3;
+--accent: #83c5be;
+--accent-soft: #006d77;
+--warm: #ffddd2;
+--warm-soft: #e29578;
+--border: #1f3a40;
+--code-bg: #13292f;
 }
 }
+
 html {
 scroll-behavior: smooth;
 }
@@ -52,17 +60,17 @@ padding: 0 20px;
 color: var(--text);
 background: var(--bg);
 -webkit-font-smoothing: antialiased;
+letter-spacing: -0.01em;
+transition: background 0.3s ease, color 0.3s ease;
 }
 
 p {
 font-size: 1.08rem;
 margin: 1.2em 0;
-color: var(--text);
 }
 p:first-of-type {
 font-size: 1.25rem;
 line-height: 1.85;
-letter-spacing: -0.01em;
 }
 
 p strong:first-child {
@@ -74,17 +82,17 @@ font-weight: 500;
 
 strong {
 font-weight: 600;
-color: var(--text);
+color: var(--accent);
 }
 
 a {
 color: var(--accent);
 text-decoration: none;
-border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+border-bottom: 1px solid rgba(0, 109, 119, 0.3);
 transition: all 0.2s ease;
 }
 a:hover {
-color: #1d4ed8;
+color: var(--warm);
 border-bottom-color: currentColor;
 }
 
@@ -94,13 +102,10 @@ font-size: 0.9rem;
 background: var(--code-bg);
 padding: 6px 10px;
 border-radius: 8px;
+border: 1px solid var(--border);
 color: var(--text);
 display: inline-block;
 margin-top: 8px;
-}
-
-p + p {
-margin-top: 0.6em;
 }
 
 hr {
@@ -110,7 +115,12 @@ margin: 2em 0;
 }
 
 ::selection {
-background: rgba(37, 99, 235, 0.2);
+background: var(--accent-soft);
+color: #00363d;
+}
+
+p + p {
+margin-top: 0.6em;
 }
 
 @media (max-width: 640px) {
