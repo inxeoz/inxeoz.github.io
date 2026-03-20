@@ -20,9 +20,8 @@ jobs:
 
       - name: Build site
         run: |
-          mkdir -p dist
           pandoc index.md \
-            -o dist/index.html \
+            -o index.html \
             --css=index.css \
             --embed-resources \
             -s \
