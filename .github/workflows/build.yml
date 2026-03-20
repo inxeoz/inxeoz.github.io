@@ -24,9 +24,9 @@ jobs:
           pandoc index.md \
             -o dist/index.html \
             --css=index.css \
+            --embed-resources \
             -s \
             -M title="Purushottam"
-          cp index.css dist/
 
       - name: Commit dist folder
         run: |
