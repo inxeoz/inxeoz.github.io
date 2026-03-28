@@ -529,32 +529,52 @@ h1.glitch::after {
     color: var(--bg-color);
 }
 
-/* ---- GHIBLI / NATURAL NOSTALGIC THEME ---- */
+/* ---- GHIBLI / NATURAL MAGIC THEME ---- */
 body.ghibli-theme {
-    --text-primary: #2d3b2d;
-    --accent-red: #c46d5e;
-    --accent-blue: #6d8e6d;
-    --accent-yellow: #a89f7b;
+    --text-primary: #1e3626;
+    --accent-red: #d56c5e;
+    --accent-blue: #6ea098;
+    --accent-yellow: #d8aa53;
     --font-heading: 'Nunito', sans-serif;
     --font-mono: 'Nunito', sans-serif;
-    background-image: url('background.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: #d1d8c7; /* Fallback */
+    background: linear-gradient(135deg, #d2e4d2 0%, #eef3e5 50%, #d8e5d0 100%);
+    background-size: 200% 200%;
+    animation: gentleBreeze 15s ease infinite;
+}
+
+@keyframes gentleBreeze {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .ghibli-theme .crt::after,
-.ghibli-theme .scanlines,
-.ghibli-theme .speedlines {
+.ghibli-theme .scanlines {
     display: none !important;
+}
+
+/* Repurpose speedlines into falling leaves/dust */
+.ghibli-theme .speedlines {
+    opacity: 0.6;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1.5" fill="%23ffffff" opacity="0.6"/><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.4"/><circle cx="80" cy="30" r="1" fill="%23ffffff" opacity="0.8"/></svg>');
+    animation: floatAround 20s linear infinite;
+}
+
+@keyframes floatAround {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+.ghibli-theme .speedlines .line {
+    display: none;
 }
 
 .ghibli-theme h1.glitch {
     animation: none;
-    text-shadow: 0 4px 10px rgba(255,255,255,0.6);
-    color: #263626;
+    text-shadow: 2px 2px 0px #fff, 0 8px 15px rgba(110, 160, 152, 0.2);
+    color: #3b5f41;
     font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .ghibli-theme h1.glitch::before,
@@ -563,7 +583,19 @@ body.ghibli-theme {
 }
 
 .ghibli-theme header {
-    border-bottom: 2px solid #b8b09b;
+    border-bottom: none;
+    position: relative;
+}
+
+.ghibli-theme header::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-yellow);
+    border-radius: 4px;
 }
 
 .ghibli-theme header::after { 
@@ -571,30 +603,36 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .kanji {
-    color: #fdfdf9;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    opacity: 0.9;
+    color: #e5f1e1;
+    text-shadow: 0 4px 10px rgba(50, 80, 50, 0.15);
+    opacity: 1;
+    font-weight: bold;
 }
 
 .ghibli-theme .subtitle {
-    background: #e8e3d2;
-    border-left: 4px solid #7c8e70;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-radius: 6px;
-    color: #4b5d4b;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border-left: 5px solid var(--accent-blue);
+    box-shadow: 0 4px 15px rgba(30, 54, 38, 0.05);
+    border-radius: 8px;
+    color: #4b6b52;
     font-weight: 700;
+    border-top: 1px solid rgba(255,255,255,0.8);
+    border-right: 1px solid rgba(255,255,255,0.8);
 }
 
 .ghibli-theme .bracket { 
-    color: #7c8e70; 
+    color: var(--accent-blue); 
 }
 
 .ghibli-theme .panel {
-    background: #f9f6ee;
-    border: 1px solid #d3cdbc;
+    background: rgba(255, 253, 246, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
     clip-path: none;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(45, 59, 45, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(30, 54, 38, 0.08), inset 0 2px 5px rgba(255,255,255,0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .ghibli-theme .panel::before,
@@ -603,63 +641,85 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .panel:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(45, 59, 45, 0.15);
-    border-color: #b8b09b;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(30, 54, 38, 0.12), inset 0 2px 5px rgba(255,255,255,1);
+    border-color: #fff;
 }
 
 .ghibli-theme .panel-header h2 {
-    color: #2d3b2d;
+    color: var(--text-primary);
     letter-spacing: 0;
-    font-weight: 800;
+    font-weight: 900;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
 }
 
 .ghibli-theme .decor-line {
-    background: #d3cdbc;
-    height: 2px;
+    background: #cddbca;
+    height: 4px;
+    border-radius: 4px;
     opacity: 1;
 }
 
 .ghibli-theme .hex-badge {
-    background: #e8e3d2;
-    color: #5b6e5b;
-    clip-path: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    background: var(--accent-yellow);
+    color: #fff;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    width: 48px;
+    height: 48px;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     font-weight: 800;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(216, 170, 83, 0.4);
 }
 
 .ghibli-theme .panel-content p {
-    color: #435443;
+    color: #4a6350;
     font-weight: 600;
 }
 
 .ghibli-theme .highlight {
-    color: #1e281e;
+    color: #274b31;
     text-shadow: none;
+    background: rgba(216, 170, 83, 0.2);
+    padding: 0 4px;
+    border-radius: 4px;
 }
 
 .ghibli-theme .status-bar {
-    background: #e8e3d2;
-    border: 1px solid #d3cdbc;
-    border-radius: 20px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #cddbca;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 .ghibli-theme .status-label {
-    color: #6a7d6a;
+    color: #799580;
     font-weight: 700;
 }
 
 .ghibli-theme .status-value {
-    color: #3f683f; 
+    color: var(--accent-blue); 
     text-shadow: none;
     font-weight: 800;
+    position: relative;
+    padding-left: 15px;
+}
+
+.ghibli-theme .status-value::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-blue);
 }
 
 .ghibli-theme .blink { 
@@ -667,20 +727,23 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .link-list .label { 
-    color: #7a8e7a; 
+    color: #8b9d8e; 
     font-weight: 700;
 }
 
 .ghibli-theme .cyber-link {
-    color: #3f683f;
-    font-weight: 700;
+    color: var(--text-primary);
+    font-weight: 800;
+    border-radius: 8px;
+    padding: 0.3rem 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .ghibli-theme .cyber-link:hover {
-    background: #e8e3d2;
-    color: #1e281e;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: rgba(110, 160, 152, 0.15);
+    color: var(--accent-blue);
+    box-shadow: 0 4px 12px rgba(110, 160, 152, 0.1);
+    transform: translateY(-2px);
 }
 
 .ghibli-theme .cyber-link::before { 
@@ -688,36 +751,41 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .footer-tag {
-    background: #f9f6ee;
-    border: 1px solid #d3cdbc;
-    border-left: 5px solid #7c8e70;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(45, 59, 45, 0.05);
+    background: rgba(255, 253, 246, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid #fff;
+    border-left: 6px solid var(--accent-yellow);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(30, 54, 38, 0.05);
 }
 
 .ghibli-theme .terminal-text {
-    color: #4b5d4b;
-    font-family: var(--font-mono);
-    font-weight: 700;
+    color: #5c7562;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.4rem;
 }
 
 .ghibli-theme .terminal-text span { 
-    color: #7c8e70; 
+    color: var(--accent-blue); 
 }
 
 .ghibli-theme .theme-btn {
-    border: 2px solid #7c8e70;
-    background: #e8e3d2;
-    color: #3f683f;
-    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, #fdfbf5 0%, #e8e3d2 100%);
+    color: #4a6350;
+    border-radius: 30px;
     font-weight: 800;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(50, 80, 50, 0.15), inset 0 2px 0 rgba(255,255,255,1);
+    padding: 0.6rem 1.2rem;
+    letter-spacing: 1px;
 }
 
 .ghibli-theme .theme-btn:hover {
-    background: #7c8e70;
-    color: #f9f6ee;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #fff 0%, #fdfbf5 100%);
+    color: var(--accent-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(50, 80, 50, 0.2), inset 0 2px 0 rgba(255,255,255,1);
 }
 
 @media (max-width: 768px) {
@@ -733,8 +801,8 @@ body.ghibli-theme {
     }
     
     .ghibli-theme .link-list .label {
-        border-bottom-color: #d3cdbc;
-        color: #6a7d6a;
+        border-bottom-color: #cddbca;
+        color: #799580;
     }
     
     .theme-toggle-wrapper {
