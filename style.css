@@ -465,11 +465,10 @@ h1.glitch::after {
         align-items: flex-start;
         gap: 0.5rem;
         font-size: 1.1rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        background: transparent;
+        border: none;
+        padding: 0;
+        box-shadow: none;
     }
     
     .link-list .label {
@@ -532,15 +531,17 @@ h1.glitch::after {
 
 /* ---- GHIBLI / NATURAL NOSTALGIC THEME ---- */
 body.ghibli-theme {
-    --bg-color: #e9eee5;        /* Pale sage green */
-    --text-primary: #2f4f2f;    /* Deep leaf green for text */
-    --accent-red: #c46d5e;      /* Soft clay */
-    --accent-blue: #6d937a;     /* Muted forest blue-green */
-    --accent-yellow: #d8b260;   /* Warm sunlight yellow */
+    --text-primary: #2d3b2d;
+    --accent-red: #c46d5e;
+    --accent-blue: #6d8e6d;
+    --accent-yellow: #a89f7b;
     --font-heading: 'Nunito', sans-serif;
     --font-mono: 'Nunito', sans-serif;
-    background-image: none;
-    background-color: var(--bg-color);
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #d1d8c7; /* Fallback */
 }
 
 .ghibli-theme .crt::after,
@@ -551,10 +552,9 @@ body.ghibli-theme {
 
 .ghibli-theme h1.glitch {
     animation: none;
-    text-shadow: none;
-    color: #1e361e;
-    font-weight: 700;
-    font-size: 5rem;
+    text-shadow: 0 4px 10px rgba(255,255,255,0.6);
+    color: #263626;
+    font-weight: 800;
 }
 
 .ghibli-theme h1.glitch::before,
@@ -563,7 +563,7 @@ body.ghibli-theme {
 }
 
 .ghibli-theme header {
-    border-bottom: 2px solid #a4bfa0;
+    border-bottom: 2px solid #b8b09b;
 }
 
 .ghibli-theme header::after { 
@@ -571,30 +571,30 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .kanji {
-    color: #a4bfa0;
-    opacity: 1;
+    color: #fdfdf9;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    opacity: 0.9;
 }
 
 .ghibli-theme .subtitle {
-    background: #dce6d5;
-    border-left: 4px solid #7b9c74;
-    box-shadow: none;
+    background: #e8e3d2;
+    border-left: 4px solid #7c8e70;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     border-radius: 6px;
-    color: #3b5c3b;
-    font-weight: 600;
+    color: #4b5d4b;
+    font-weight: 700;
 }
 
 .ghibli-theme .bracket { 
-    color: #7b9c74; 
+    color: #7c8e70; 
 }
 
 .ghibli-theme .panel {
-    background: #f4f7f2;
-    border: 1px solid #cbe0c9;
+    background: #f9f6ee;
+    border: 1px solid #d3cdbc;
     clip-path: none;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(47, 79, 47, 0.04);
-    backdrop-filter: none;
+    box-shadow: 0 8px 24px rgba(45, 59, 45, 0.1);
 }
 
 .ghibli-theme .panel::before,
@@ -604,25 +604,25 @@ body.ghibli-theme {
 
 .ghibli-theme .panel:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(47, 79, 47, 0.08);
-    border-color: #a4bfa0;
+    box-shadow: 0 12px 30px rgba(45, 59, 45, 0.15);
+    border-color: #b8b09b;
 }
 
 .ghibli-theme .panel-header h2 {
-    color: #2f4f2f;
+    color: #2d3b2d;
     letter-spacing: 0;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .ghibli-theme .decor-line {
-    background: #cbe0c9;
+    background: #d3cdbc;
     height: 2px;
     opacity: 1;
 }
 
 .ghibli-theme .hex-badge {
-    background: #dce6d5;
-    color: #6a8c6a;
+    background: #e8e3d2;
+    color: #5b6e5b;
     clip-path: none;
     border-radius: 50%;
     width: 45px;
@@ -631,32 +631,35 @@ body.ghibli-theme {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .ghibli-theme .panel-content p {
-    color: #4a6c4a;
+    color: #435443;
+    font-weight: 600;
 }
 
 .ghibli-theme .highlight {
-    color: #1e361e;
+    color: #1e281e;
     text-shadow: none;
 }
 
 .ghibli-theme .status-bar {
-    background: #dce6d5;
-    border: none;
+    background: #e8e3d2;
+    border: 1px solid #d3cdbc;
     border-radius: 20px;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
 }
 
 .ghibli-theme .status-label {
-    color: #6a8c6a;
+    color: #6a7d6a;
+    font-weight: 700;
 }
 
 .ghibli-theme .status-value {
-    color: #3d7a47; /* Positive moss green */
+    color: #3f683f; 
     text-shadow: none;
+    font-weight: 800;
 }
 
 .ghibli-theme .blink { 
@@ -664,19 +667,20 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .link-list .label { 
-    color: #89a889; 
-    font-weight: 600;
+    color: #7a8e7a; 
+    font-weight: 700;
 }
 
 .ghibli-theme .cyber-link {
-    color: #3d7a47;
-    font-weight: 600;
+    color: #3f683f;
+    font-weight: 700;
 }
 
 .ghibli-theme .cyber-link:hover {
-    background: #dce6d5;
-    color: #1e361e;
+    background: #e8e3d2;
+    color: #1e281e;
     border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .ghibli-theme .cyber-link::before { 
@@ -684,32 +688,36 @@ body.ghibli-theme {
 }
 
 .ghibli-theme .footer-tag {
-    background: #f4f7f2;
-    border: 1px solid #cbe0c9;
-    border-left: 5px solid #7b9c74;
+    background: #f9f6ee;
+    border: 1px solid #d3cdbc;
+    border-left: 5px solid #7c8e70;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(47, 79, 47, 0.03);
+    box-shadow: 0 4px 10px rgba(45, 59, 45, 0.05);
 }
 
 .ghibli-theme .terminal-text {
-    color: #3d7a47;
+    color: #4b5d4b;
     font-family: var(--font-mono);
-}
-
-.ghibli-theme .terminal-text span { 
-    color: #7b9c74; 
-}
-
-.ghibli-theme .theme-btn {
-    border: 2px solid #7b9c74;
-    color: #3d7a47;
-    border-radius: 20px;
     font-weight: 700;
 }
 
+.ghibli-theme .terminal-text span { 
+    color: #7c8e70; 
+}
+
+.ghibli-theme .theme-btn {
+    border: 2px solid #7c8e70;
+    background: #e8e3d2;
+    color: #3f683f;
+    border-radius: 20px;
+    font-weight: 800;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 .ghibli-theme .theme-btn:hover {
-    background: #7b9c74;
-    color: #fff;
+    background: #7c8e70;
+    color: #f9f6ee;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
@@ -718,14 +726,15 @@ body.ghibli-theme {
     }
     
     .ghibli-theme .link-list li {
-        background: #f4f7f2;
-        border-color: #cbe0c9;
-        box-shadow: 0 4px 15px rgba(47, 79, 47, 0.05);
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
     }
     
     .ghibli-theme .link-list .label {
-        border-bottom-color: #cbe0c9;
-        color: #6a8c6a;
+        border-bottom-color: #d3cdbc;
+        color: #6a7d6a;
     }
     
     .theme-toggle-wrapper {
