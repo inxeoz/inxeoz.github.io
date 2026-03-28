@@ -6,6 +6,7 @@
     <title>Purushottam - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Teko:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="crt video-noise">
@@ -19,6 +20,9 @@
         </div>
         <div class="scanlines"></div>
         <div class="container">
+            <div class="theme-toggle-wrapper">
+                <button id="theme-btn" class="theme-btn">CHANGE STYLE (GHIBLI)</button>
+            </div>
             <header>
                 <div class="glitch-wrapper">
                     <h1 class="glitch" data-text="PURUSHOTTAM">PURUSHOTTAM</h1>
@@ -74,5 +78,17 @@
             </main>
         </div>
     </div>
+    
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('ghibli-theme');
+            if(document.body.classList.contains('ghibli-theme')) {
+                themeBtn.textContent = 'REVERT TO CYBERPUNK';
+            } else {
+                themeBtn.textContent = 'CHANGE STYLE (GHIBLI)';
+            }
+        });
+    </script>
 </body>
 </html>
